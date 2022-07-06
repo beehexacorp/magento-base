@@ -21,6 +21,7 @@
             "role": "Magento 2 plugin contributor"
         }
     ],
+    "prefer-stable": true,
     "minimum-stability": "dev",
     "support": {
         "forum": "https://www.beehexa.com/"
@@ -33,7 +34,7 @@
         "files": [
             "registration.php"
         ],
-        "psr-4": {
+        "psr-0": {
             "Beehexa\\Base\\": ""
         }
     }
