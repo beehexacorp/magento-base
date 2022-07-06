@@ -1,6 +1,6 @@
 {
     "name": "beehexa/magento-base",
-    "type": "magento2-module",
+    "type": "library",
     "version": "1.0.0",
     "description": "Beehexa base module.",
     "keywords": [
