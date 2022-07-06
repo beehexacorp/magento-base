@@ -3,12 +3,29 @@
     "type": "magento2-module",
     "version": "1.0.0",
     "description": "Beehexa base module.",
+    "keywords": [
+        "beehexa",
+        "base-module",
+        "magento2-module"
+    ],
+    "homepage": "https://www.beehexa.com/",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
     ],
+    "authors": [
+        {
+            "name": "Beehexa",
+            "email": "hello@beehexa.com",
+            "homepage": "https://www.beehexa.com/",
+            "role": "Magento 2 plugin contributor"
+        }
+    ],
     "prefer-stable": true,
     "minimum-stability": "dev",
+    "support": {
+        "forum": "https://www.beehexa.com/"
+    },
     "require": {
         "php": "~7.2 || ~8.0 || ~8.1",
         "magento/framework": "*"
