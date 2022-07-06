@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © 2022 Beehexa All rights reserved.
+  ~ See COPYING.txt for license details.
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Beehexa\Base\Service\Data\Wordpress\PostDataInterface" type="Beehexa\Base\Model\Data\Wordpress\PostData"/>
+    <preference for="\Beehexa\Base\Service\WPServiceInterface" type="\Beehexa\Base\Model\WPService"/>
+    <preference for="Beehexa\Base\Model\Message\AdminNotifierInterface" type="Beehexa\Base\Model\Message\AdminAdminNotifier"/>
+    <virtualType name="BeehexaVirtualLogger\VirtualDebug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/beehexa.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="BeehexaVirtualLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">BeehexaVirtualLogger\VirtualDebug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="\Beehexa\Base\Model\Wordpress\WPEntityApi">
+        <arguments>
+            <argument name="logger" xsi:type="object">BeehexaVirtualLogger</argument>
+        </arguments>
+    </type>
+</config>
