@@ -24,7 +24,7 @@ This is core modules for Beehexa's modules. Which adding Menu, Configuration sec
  - Flush the cache by running `php bin/magento cache:flush`
 
 ### Type 2: Composer
- - Install the module composer by running `composer require beehexa/module-base`
+ - Install the module composer by running `composer require beehexa/magento-base`
  - enable the module by running `php bin/magento module:enable Beehexa_Base`
  - apply database updates by running `php bin/magento setup:upgrade`\*
  - Flush the cache by running `php bin/magento cache:flush`
