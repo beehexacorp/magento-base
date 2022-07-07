@@ -12,7 +12,10 @@ This is core modules for Beehexa's modules. Which adding Menu, Configuration sec
  - [Specifications](#markdown-header-specifications)
  
 ## Main Functionalities
- This is core modules for Beehexa's modules. Which adding Menu, Configuration section. 
+ This is core modules for Beehexa's modules. 
+ - Which adding Menu,
+ - Configuration section. 
+ - Fetching Beehexa News form Beehex
  
 ## Installation
 \* = in production please use the `--keep-generated` option
