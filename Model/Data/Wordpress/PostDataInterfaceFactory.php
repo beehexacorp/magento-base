@@ -6,9 +6,9 @@
 
 namespace Beehexa\Base\Model\Data\Wordpress;
 
+use Beehexa\Base\Service\Data\Wordpress\PostDataInterface;
 use Beehexa\Base\Service\Data\Wordpress\WpEntityInterface;
 use Magento\Framework\ObjectManagerInterface;
-use Beehexa\Base\Service\Data\Wordpress\PostDataInterface;
 
 class PostDataInterfaceFactory
 {
@@ -31,8 +31,10 @@ class PostDataInterfaceFactory
      * @param ObjectManagerInterface $objectManager
      * @param string $instanceName
      */
-    public function __construct(ObjectManagerInterface $objectManager, $instanceName = \Beehexa\Base\Service\Data\Wordpress\PostDataInterface::class)
-    {
+    public function __construct(
+        ObjectManagerInterface $objectManager,
+        string $instanceName = \Beehexa\Base\Service\Data\Wordpress\PostDataInterface::class
+    ) {
         $this->_objectManager = $objectManager;
         $this->_instanceName = $instanceName;
     }

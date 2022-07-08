@@ -155,11 +155,13 @@ class WPEntityApi
             http_build_query($params)
         ]);
         $this->client->get($url);
-        if ($this->client->getStatus() !== 200) {
+        $responseStatus = $this->client->getStatus();
+        if ($responseStatus !== 200) {
             $this->logger->info("Beehexa API Response ERROR", [
-                'status' => $this->client->getStatus()
+                'status' => $responseStatus
             ]);
-            throw new \HttpResponseException(__("Has an exception during calling the API, Response Status %s", $this->client->getStatus()));
+
+            throw new \HttpResponseException(__("Has an error while calling the API, Status %s", $responseStatus));
         }
         return json_decode($this->client->getBody(), true);
     }
