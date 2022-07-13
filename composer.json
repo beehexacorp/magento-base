@@ -28,7 +28,7 @@
     },
     "require": {
         "php": "~7.2 || ~8.0 || ~8.1",
-        "magento/framework": "*"
+        "magento/framework": ">=102.0"
     },
     "autoload": {
         "files": [
