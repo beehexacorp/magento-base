@@ -1,10 +1,10 @@
 {
-    "name": "beehexa/magento-base",
+    "name": "beehexacorp/magento-base",
     "type": "magento2-module",
     "version": "v2.1.0",
     "description": "Beehexa base module.",
     "keywords": [
-        "beehexa",
+        "beehexacorp",
         "base-module",
         "magento2-module"
     ],
