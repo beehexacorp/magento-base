@@ -1,7 +1,7 @@
 {
     "name": "beehexa/magento-base",
     "type": "library",
-    "version": "v2.0.0",
+    "version": "v2.1.0",
     "description": "Beehexa base module.",
     "keywords": [
         "beehexa",
@@ -34,7 +34,7 @@
         "files": [
             "registration.php"
         ],
-        "psr-0": {
+        "psr-4": {
             "Beehexa\\Base\\": ""
         }
     }
