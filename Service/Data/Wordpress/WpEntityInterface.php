@@ -24,47 +24,47 @@ interface WpEntityInterface
      *
      * @return int
      */
-    public function getId();
+    public function getId() :int;
 
     /**
      * Getter for URL
      *
      * @return  string
      */
-    public function getUrl();
+    public function getUrl() :string;
 
     /**
      * Getter for content
      *
      * @return  string
      */
-    public function getContent();
+    public function getContent() :string;
 
     /**
      * Getter for title
      *
      * @return  string
      */
-    public function getTitle();
+    public function getTitle(): string;
 
     /**
      * Getter for meta description
      *
      * @return  string
      */
-    public function getMetaDescription();
+    public function getMetaDescription(): string;
 
     /**
      * Getter for Date GMT
      *
      * @return string
      */
-    public function getDateGmt();
+    public function getDateGmt(): string;
 
     /**
      * Getter for timestamp
      *
      * @return int
      */
-    public function getTimestamp();
+    public function getTimestamp(): int;
 }

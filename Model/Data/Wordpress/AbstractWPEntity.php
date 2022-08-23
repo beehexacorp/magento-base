@@ -13,15 +13,15 @@ abstract class AbstractWPEntity extends \Magento\Framework\DataObject implements
     /**
      * @inheritDoc
      */
-    public function getId()
+    public function getId():int
     {
-        return $this->_getData(static::ENTITY_ID);
+        return (int)$this->_getData(static::ENTITY_ID);
     }
 
     /**
      * @inheritDoc
      */
-    public function getUrl()
+    public function getUrl():string
     {
         return $this->_getData(static::URL);
     }
@@ -29,7 +29,7 @@ abstract class AbstractWPEntity extends \Magento\Framework\DataObject implements
     /**
      * @inheritDoc
      */
-    public function getContent()
+    public function getContent():string
     {
         return $this->_getData(static::CONTENT);
     }
@@ -37,7 +37,7 @@ abstract class AbstractWPEntity extends \Magento\Framework\DataObject implements
     /**
      * @inheritDoc
      */
-    public function getTitle()
+    public function getTitle():string
     {
         return $this->_getData(static::TITLE);
     }
@@ -45,7 +45,7 @@ abstract class AbstractWPEntity extends \Magento\Framework\DataObject implements
     /**
      * @inheritDoc
      */
-    public function getMetaDescription()
+    public function getMetaDescription():string
     {
         return $this->_getData(static::META_DESCRIPTION);
     }
@@ -53,7 +53,7 @@ abstract class AbstractWPEntity extends \Magento\Framework\DataObject implements
     /**
      * @inheritDoc
      */
-    public function getDateGmt()
+    public function getDateGmt():string
     {
         return $this->_getData(static::DATE_GMT);
     }
@@ -61,7 +61,7 @@ abstract class AbstractWPEntity extends \Magento\Framework\DataObject implements
     /**
      * @inheritDoc
      */
-    public function getTimestamp()
+    public function getTimestamp():int
     {
         $dateGmt = $this->getDateGmt();
         $date = \DateTime::createFromFormat(\DateTime::ATOM, $dateGmt);

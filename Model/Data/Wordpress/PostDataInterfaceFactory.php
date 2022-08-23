@@ -16,16 +16,16 @@ class PostDataInterfaceFactory
     /**
      * Object Manager instance
      *
-     * @var \Magento\Framework\ObjectManagerInterface
+     * @var \Magento\Framework\ObjectManagerInterface|null
      */
-    protected $_objectManager = null;
+    protected ?ObjectManagerInterface $_objectManager = null;
 
     /**
      * Instance name to create
      *
-     * @var string
+     * @var string|null
      */
-    protected $_instanceName = null;
+    protected ?string $_instanceName = null;
 
     /**
      * @param ObjectManagerInterface $objectManager
@@ -45,7 +45,7 @@ class PostDataInterfaceFactory
      * @param array $data
      * @return \Beehexa\Base\Service\Data\Wordpress\PostDataInterface
      */
-    public function create(array $data = [])
+    public function create(array $data = []): PostDataInterface
     {
         if (isset($data['excerpt']) && isset($data['excerpt']['rendered'])) {
             $data[PostDataInterface::EXCERPT_RENDERED] = $data['excerpt']['rendered'];

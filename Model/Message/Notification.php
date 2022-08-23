@@ -16,7 +16,7 @@ class Notification implements MessageInterface
     /**
      * @var PostManagement
      */
-    protected $postManagement;
+    protected PostManagement $postManagement;
 
     /**
      * @param PostManagement $postManagement
@@ -31,7 +31,7 @@ class Notification implements MessageInterface
      *
      * @return string
      */
-    public function getIdentity()
+    public function getIdentity() :string
     {
         return 'beehexa_news';
     }
@@ -41,7 +41,7 @@ class Notification implements MessageInterface
      *
      * @return bool
      */
-    public function isDisplayed()
+    public function isDisplayed() :bool
     {
         //Always return true, always show the latest blog to the notification bar
         if ($this->postManagement->getSavedPost()->getId()) {
@@ -55,7 +55,7 @@ class Notification implements MessageInterface
      *
      * @return string
      */
-    public function getText()
+    public function getText() :string
     {
         $post = $this->postManagement->getSavedPost();
         return implode(' ', [
@@ -69,7 +69,7 @@ class Notification implements MessageInterface
      *
      * @return int
      */
-    public function getSeverity()
+    public function getSeverity():int
     {
         return static::SEVERITY_FORCE_TO_DISPLAY;
     }

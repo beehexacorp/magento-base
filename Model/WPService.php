@@ -17,12 +17,12 @@ class WPService implements WPServiceInterface
     /**
      * @var PostDataInterfaceFactory
      */
-    protected $postDataInterfaceFactory;
+    protected PostDataInterfaceFactory $postDataInterfaceFactory;
 
     /**
      * @var WPEntityApiFactory
      */
-    protected $WPEntityApiFactory;
+    protected WPEntityApiFactory $WPEntityApiFactory;
 
     /**
      * @param WPEntityApiFactory       $WPEntityApiFactory
@@ -39,7 +39,7 @@ class WPService implements WPServiceInterface
     /**
      * @inheritDoc
      */
-    public function getPosts($limit = 2, $page = 1)
+    public function getPosts(int $limit = 2, int $page = 1): array
     {
         /**
          * @var $postApi \Beehexa\Base\Model\Wordpress\WPEntityApi

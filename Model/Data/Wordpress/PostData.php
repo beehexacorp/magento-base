@@ -13,7 +13,7 @@ class PostData extends AbstractWPEntity implements PostDataInterface
     /**
      * @inheritdoc
      */
-    public function getExcerptRendered()
+    public function getExcerptRendered() :?string
     {
         return $this->_getData(static::EXCERPT_RENDERED);
     }
@@ -21,7 +21,7 @@ class PostData extends AbstractWPEntity implements PostDataInterface
     /**
      * @inheritDoc
      */
-    public function toJson(array $keys = [])
+    public function toJson(array $keys = []): bool|string
     {
         $usedKeys = [
             static::ENTITY_ID,
@@ -37,16 +37,16 @@ class PostData extends AbstractWPEntity implements PostDataInterface
     /**
      * @inheritdoc
      */
-    public function isRead()
+    public function isRead():bool
     {
-        return $this->_getData(static::IS_READ);
+        return !!$this->_getData(static::IS_READ);
     }
 
     /**
      * @inheritDoc
      */
-    public function setIsRead($isRead)
+    public function setIsRead($isRead):void
     {
-        return $this->setData(static::IS_READ, $isRead);
+        $this->setData(static::IS_READ, $isRead);
     }
 }

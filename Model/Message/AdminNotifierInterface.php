@@ -14,5 +14,5 @@ interface AdminNotifierInterface
      * @param \Beehexa\Base\Service\Data\Wordpress\PostDataInterface $post
      * @return void
      */
-    public function push($post);
+    public function push(\Beehexa\Base\Service\Data\Wordpress\PostDataInterface $post): void;
 }

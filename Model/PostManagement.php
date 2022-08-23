@@ -17,17 +17,17 @@ class PostManagement
     /**
      * @var FlagManager
      */
-    protected $flagManager;
+    protected FlagManager $flagManager;
 
     /**
      * @var WPService
      */
-    protected $WPService;
+    protected WPService $WPService;
 
     /**
      * @var PostDataInterfaceFactory
      */
-    protected $postDataInterfaceFactory;
+    protected PostDataInterfaceFactory $postDataInterfaceFactory;
 
     /**
      * @param FlagManager              $flagManager
@@ -49,7 +49,7 @@ class PostManagement
      *
      * @return PostDataInterface|null
      */
-    public function getSavedPost()
+    public function getSavedPost(): ?PostDataInterface
     {
         $recentPost = $this->flagManager->getFlagData(static::FLAG_CODE_SAVED_POST);
         $post = $this->postDataInterfaceFactory->create();
@@ -66,7 +66,7 @@ class PostManagement
      * @param PostDataInterface $post
      * @return PostManagement
      */
-    public function savePost(PostDataInterface $post)
+    public function savePost(PostDataInterface $post): static
     {
         $this->flagManager->saveFlag(static::FLAG_CODE_SAVED_POST, $post->toJson());
         return $this;
@@ -77,7 +77,7 @@ class PostManagement
      *
      * @return bool
      */
-    public function readLatestPost()
+    public function readLatestPost(): bool
     {
         $post = $this->getSavedPost();
         if ($post->getId()) {
@@ -92,7 +92,7 @@ class PostManagement
      *
      * @return PostDataInterface|null
      */
-    public function getTheNewestPost()
+    public function getTheNewestPost(): ?PostDataInterface
     {
         $recentlyPostId = $this->getSavedPost()->getId() ?? 0;
         $postCollection = $this->WPService->getPosts();

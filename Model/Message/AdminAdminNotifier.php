@@ -6,12 +6,14 @@
 
 namespace Beehexa\Base\Model\Message;
 
+use Beehexa\Base\Service\Data\Wordpress\PostDataInterface;
+
 class AdminAdminNotifier implements AdminNotifierInterface
 {
     /**
      * @var \Magento\Framework\Notification\NotifierInterface
      */
-    protected $notifier;
+    protected \Magento\Framework\Notification\NotifierInterface $notifier;
 
     /**
      * @param \Magento\Framework\Notification\NotifierInterface $notifier
@@ -24,10 +26,10 @@ class AdminAdminNotifier implements AdminNotifierInterface
     /**
      * Push WP post to admin notification
      *
-     * @param \Beehexa\Base\Service\Data\Wordpress\PostDataInterface $post
+     * @param PostDataInterface $post
      * @return void
      */
-    public function push($post)
+    public function push(PostDataInterface $post): void
     {
         $this->notifier->addMajor(
             __('Beehexa\'s News'),

@@ -19,32 +19,32 @@ class WPEntityApi
     /**
      * @var ClientInterface
      */
-    protected $client;
-
-    /**
-     * @var null
-     */
-    protected $orderBy = null;
-
-    /**
-     * @var int
-     */
-    protected $limit = 10;
-
-    /**
-     * @var int
-     */
-    protected $page = 1;
-
-    /**
-     * @var int|LoggerInterface
-     */
-    protected $logger = 10;
+    protected ClientInterface $client;
 
     /**
      * @var array
      */
-    protected $filters = [];
+    protected array $orderBy = [];
+
+    /**
+     * @var int
+     */
+    protected int $limit = 10;
+
+    /**
+     * @var int
+     */
+    protected int $page = 1;
+
+    /**
+     * @var int|LoggerInterface
+     */
+    protected LoggerInterface|int $logger = 10;
+
+    /**
+     * @var array
+     */
+    protected array $filters = [];
 
     /**
      * @param ClientInterface $httpClient
@@ -64,7 +64,7 @@ class WPEntityApi
      * @param int $limit
      * @return void
      */
-    public function limit(int $limit = 10)
+    public function limit(int $limit = 10): void
     {
         $this->limit = $limit;
     }
@@ -75,7 +75,7 @@ class WPEntityApi
      * @param int $page
      * @return void
      */
-    public function page(int $page = 1)
+    public function page(int $page = 1): void
     {
         $this->page = $page;
     }
@@ -87,7 +87,7 @@ class WPEntityApi
      * @param mixed  $value
      * @return $this
      */
-    public function addFieldToFilter($field, $value)
+    public function addFieldToFilter(string $field, mixed $value): static
     {
         $this->filters[$field] = $value;
         return $this;
@@ -100,7 +100,7 @@ class WPEntityApi
      * @param string $order = 'desc'
      * @return WPEntityApi
      */
-    public function order(string $field, string $order = 'desc')
+    public function order(string $field, string $order = 'desc'): static
     {
         $this->orderBy = [
             'order'   => $order,
@@ -114,7 +114,7 @@ class WPEntityApi
      *
      * @return array
      */
-    public function getRequestParams()
+    public function getRequestParams(): array
     {
         $requestParams = [];
 
@@ -144,7 +144,7 @@ class WPEntityApi
      * @throws LocalizedException
      * @throws \HttpResponseException
      */
-    public function get($entityType)
+    public function get(string $entityType): mixed
     {
         $baseURL = static::BEEHEXA_BASE_URL;
         $params = $this->getRequestParams();
@@ -173,7 +173,7 @@ class WPEntityApi
      * @return string
      * @throws LocalizedException
      */
-    public function getRequestPath(string $entityType)
+    public function getRequestPath(string $entityType): string
     {
         switch ($entityType) {
             case self::ENTITY_POST:

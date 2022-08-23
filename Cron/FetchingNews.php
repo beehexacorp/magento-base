@@ -14,12 +14,12 @@ class FetchingNews
     /**
      * @var PostManagement
      */
-    protected $postManagement;
+    protected PostManagement $postManagement;
 
     /**
      * @var AdminNotifierInterface
      */
-    protected $notifier;
+    protected AdminNotifierInterface $notifier;
 
     /**
      * @param AdminNotifierInterface $notifier
@@ -38,7 +38,7 @@ class FetchingNews
      *
      * @return void
      */
-    public function fetchNewMessage()
+    public function fetchNewMessage(): void
     {
         $newestPost = $this->postManagement->getTheNewestPost();
         if ($newestPost && $newestPost->getId()) {

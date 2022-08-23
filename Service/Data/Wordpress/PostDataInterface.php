@@ -15,16 +15,16 @@ interface PostDataInterface extends WpEntityInterface
     /**
      * Getter for excerpt rendered
      *
-     * @return string
+     * @return null|string
      */
-    public function getExcerptRendered();
+    public function getExcerptRendered() :?string;
 
     /**
      * Getter is Read
      *
      * @return boolean
      */
-    public function isRead();
+    public function isRead():bool;
 
     /**
      * Setter for Is Read
@@ -32,5 +32,5 @@ interface PostDataInterface extends WpEntityInterface
      * @param bool $isRead
      * @return void
      */
-    public function setIsRead($isRead);
+    public function setIsRead(bool $isRead) :void;
 }

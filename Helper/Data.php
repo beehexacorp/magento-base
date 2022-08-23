@@ -20,7 +20,7 @@ class Data extends AbstractHelper
      * @param string $scopeId
      * @return mixed
      */
-    public function getConfigValue(string $path, $scopeId = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+    public function getConfigValue(string $path, string $scopeId = ScopeConfigInterface::SCOPE_TYPE_DEFAULT): mixed
     {
         return $this->scopeConfig->getValue(self::XML_CONFIG_PREFIX . '/' . $path, $scopeId);
     }
@@ -29,10 +29,10 @@ class Data extends AbstractHelper
      * Get config flag
      *
      * @param string $path
-     * @param string $scopeId
-     * @return mixed
+     * @param null|int|string $scopeId
+     * @return bool
      */
-    public function getConfigFlag(string $path, $scopeId = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+    public function getConfigFlag(string $path, null|int|string $scopeId = ScopeConfigInterface::SCOPE_TYPE_DEFAULT): bool
     {
         return $this->scopeConfig->isSetFlag(self::XML_CONFIG_PREFIX . '/' . $path, $scopeId);
     }
