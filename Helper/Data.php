@@ -12,6 +12,15 @@ use Magento\Framework\App\Helper\AbstractHelper;
 class Data extends AbstractHelper
 {
     public const XML_CONFIG_PREFIX = 'beehexa';
+    public const XML_CONFIG_NEWS_ENABLE = 'beehexa/news/enable';
+
+    /**
+     * @return bool
+     */
+    public function isEnabled() :bool
+    {
+        return $this->getConfigFlag(self::XML_CONFIG_NEWS_ENABLE);
+    }
 
     /**
      * Get config value
