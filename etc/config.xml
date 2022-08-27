@@ -9,6 +9,9 @@
     <default>
         <beehexa>
             <vendor_homepage><![CDATA[https://www.beehexa.com/]]></vendor_homepage>
+            <news>
+                <enable>1</enable>
+            </news>
         </beehexa>
     </default>
 </config>
