@@ -37,9 +37,9 @@ class WPEntityApi
     protected int $page = 1;
 
     /**
-     * @var int|LoggerInterface
+     * @var LoggerInterface
      */
-    protected LoggerInterface|int $logger = 10;
+    protected LoggerInterface $logger;
 
     /**
      * @var array
@@ -87,7 +87,7 @@ class WPEntityApi
      * @param mixed  $value
      * @return $this
      */
-    public function addFieldToFilter(string $field, mixed $value): static
+    public function addFieldToFilter(string $field, mixed $value): WPEntityApi
     {
         $this->filters[$field] = $value;
         return $this;
@@ -100,7 +100,7 @@ class WPEntityApi
      * @param string $order = 'desc'
      * @return WPEntityApi
      */
-    public function order(string $field, string $order = 'desc'): static
+    public function order(string $field, string $order = 'desc'): WPEntityApi
     {
         $this->orderBy = [
             'order'   => $order,
@@ -161,7 +161,7 @@ class WPEntityApi
                 'status' => $responseStatus
             ]);
 
-            throw new \HttpResponseException(__("Has an error while calling the API, Status %s", $responseStatus));
+            throw new \HttpResponseException(__("Error while calling the API, Status %s", $responseStatus));
         }
         return json_decode($this->client->getBody(), true);
     }

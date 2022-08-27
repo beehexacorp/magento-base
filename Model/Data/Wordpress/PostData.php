@@ -21,7 +21,7 @@ class PostData extends AbstractWPEntity implements PostDataInterface
     /**
      * @inheritDoc
      */
-    public function toJson(array $keys = []): bool|string
+    public function toJson(array $keys = []): string
     {
         $usedKeys = [
             static::ENTITY_ID,
@@ -31,7 +31,10 @@ class PostData extends AbstractWPEntity implements PostDataInterface
             static::DATE_GMT,
             static::IS_READ,
         ];
-        return parent::toJson($usedKeys);
+        if($result = parent::toJson($usedKeys)){
+            return $result;
+        }
+        return '{}';
     }
 
     /**

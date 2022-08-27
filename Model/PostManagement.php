@@ -66,7 +66,7 @@ class PostManagement
      * @param PostDataInterface $post
      * @return PostManagement
      */
-    public function savePost(PostDataInterface $post): static
+    public function savePost(PostDataInterface $post): PostManagement
     {
         $this->flagManager->saveFlag(static::FLAG_CODE_SAVED_POST, $post->toJson());
         return $this;

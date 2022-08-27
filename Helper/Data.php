@@ -6,7 +6,7 @@
 
 namespace Beehexa\Base\Helper;
 
-use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\App\ScopeInterface;
 use Magento\Framework\App\Helper\AbstractHelper;
 
 class Data extends AbstractHelper
@@ -20,7 +20,7 @@ class Data extends AbstractHelper
      * @param string $scopeId
      * @return mixed
      */
-    public function getConfigValue(string $path, string $scopeId = ScopeConfigInterface::SCOPE_TYPE_DEFAULT): mixed
+    public function getConfigValue(string $path, string $scopeId = ScopeInterface::SCOPE_DEFAULT): mixed
     {
         return $this->scopeConfig->getValue(self::XML_CONFIG_PREFIX . '/' . $path, $scopeId);
     }
@@ -32,7 +32,7 @@ class Data extends AbstractHelper
      * @param null|int|string $scopeId
      * @return bool
      */
-    public function getConfigFlag(string $path, null|int|string $scopeId = ScopeConfigInterface::SCOPE_TYPE_DEFAULT): bool
+    public function getConfigFlag(string $path, string $scopeId = ScopeInterface::SCOPE_DEFAULT): bool
     {
         return $this->scopeConfig->isSetFlag(self::XML_CONFIG_PREFIX . '/' . $path, $scopeId);
     }
