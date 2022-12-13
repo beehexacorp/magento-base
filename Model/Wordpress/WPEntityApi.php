@@ -112,7 +112,7 @@ class WPEntityApi
     /**
      * Getter for request params
      *
-     * @return array
+     * @return string[]
      */
     public function getRequestParams(): array
     {
@@ -140,11 +140,11 @@ class WPEntityApi
      * Implement get and filter because we use the API for fetching post only
      *
      * @param string $entityType
-     * @return mixed
+     * @return array
      * @throws LocalizedException
      * @throws \HttpResponseException
      */
-    public function get(string $entityType): mixed
+    public function get(string $entityType): array
     {
         $baseURL = static::BEEHEXA_BASE_URL;
         $params = $this->getRequestParams();
