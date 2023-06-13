@@ -31,7 +31,7 @@ class PostData extends AbstractWPEntity implements PostDataInterface
             static::DATE_GMT,
             static::IS_READ,
         ];
-        if($result = parent::toJson($usedKeys)){
+        if ($result = parent::toJson($usedKeys)) {
             return $result;
         }
         return '{}';
