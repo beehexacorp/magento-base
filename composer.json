@@ -1,7 +1,7 @@
 {
     "name": "beehexacorp/magento-base",
     "type": "magento2-module",
-    "version": "2.2.2",
+    "version": "2.3.2",
     "description": "Beehexa base module.",
     "keywords": [
         "beehexacorp",
