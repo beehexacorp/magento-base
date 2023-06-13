@@ -15,6 +15,8 @@ class Data extends AbstractHelper
     public const XML_CONFIG_NEWS_ENABLE = 'beehexa/news/enable';
 
     /**
+     * Get enabled
+     *
      * @return bool
      */
     public function isEnabled() :bool
