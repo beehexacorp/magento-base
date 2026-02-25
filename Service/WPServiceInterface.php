@@ -17,5 +17,5 @@ interface WPServiceInterface
      * @param int $page
      * @return \Beehexa\Base\Service\Data\Wordpress\PostDataInterface[]
      */
-    public function getPosts(int $limit = 2, int $page = 1): array;
+    public function getPosts(int $limit = 2, int $page = 1);
 }
